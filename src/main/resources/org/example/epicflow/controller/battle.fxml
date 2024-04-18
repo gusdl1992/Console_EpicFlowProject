@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.epicflow.controller.BattleController">
+   <children>
+      <ImageView fitHeight="611.0" fitWidth="800.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../img/battlebackground.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="character" fitHeight="421.0" fitWidth="298.0" layoutX="85.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../img/character.png" />
+         </image></ImageView>
+      <Pane fx:id="slimeArea" layoutX="463.0" layoutY="91.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <ImageView fitHeight="192.0" fitWidth="171.0" layoutX="6.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/pngtree-blue-cute-slime-png-image_7472075.png" />
+               </image>
+            </ImageView>
+            <ProgressBar fx:id="slimeHp" layoutX="13.0" layoutY="4.0" prefHeight="20.0" prefWidth="176.0" progress="1.0" />
+            <Label fx:id="slimeName" alignment="CENTER" layoutX="51.0" layoutY="171.0" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+            <Label fx:id="slimeHeatBox" alignment="CENTER" layoutX="58.0" layoutY="-35.0" prefHeight="25.0" prefWidth="91.0" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <HBox alignment="TOP_CENTER" layoutX="23.0" layoutY="5.0" prefHeight="17.0" prefWidth="161.0">
+               <children>
+                  <Label fx:id="slimeNowHp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="70.0" text="0" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="/">
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="slimeMaxHp" prefHeight="17.0" prefWidth="70.0" text="0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane fx:id="goblinArea" layoutX="435.0" layoutY="54.0" prefHeight="247.0" prefWidth="238.0" visible="false">
+         <children>
+            <ImageView fx:id="goblin" fitHeight="232.0" fitWidth="230.0" layoutX="-33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/goblin.png" />
+               </image>
+            </ImageView>
+            <ProgressBar fx:id="goblinHp" layoutX="31.0" layoutY="4.0" prefHeight="20.0" prefWidth="176.0" progress="1.0" />
+            <Label fx:id="goblinName" alignment="CENTER" layoutX="69.0" layoutY="223.0" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+            <Label fx:id="goblinHeatBox" alignment="CENTER" layoutX="75.0" layoutY="-35.0" prefHeight="25.0" prefWidth="91.0" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <HBox alignment="TOP_CENTER" layoutX="41.0" layoutY="5.0" prefHeight="17.0" prefWidth="161.0">
+               <children>
+                  <Label fx:id="goblinNowHp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="70.0" text="0" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="/">
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="goblinMaxHp" prefHeight="17.0" prefWidth="70.0" text="0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane fx:id="minoArea" layoutX="400.0" layoutY="39.0" prefHeight="325.0" prefWidth="290.0" visible="false">
+         <children>
+            <ImageView fx:id="mino" fitHeight="297.0" fitWidth="324.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/mino.png" />
+               </image>
+            </ImageView>
+            <ProgressBar fx:id="minoHp" layoutX="57.0" layoutY="-3.0" prefHeight="20.0" prefWidth="176.0" progress="1.0" />
+            <Label fx:id="minoName" alignment="CENTER" layoutX="95.0" layoutY="287.0" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+            <Label fx:id="minoHeatBox" alignment="CENTER" layoutX="101.0" layoutY="-40.0" prefHeight="25.0" prefWidth="91.0" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <HBox alignment="TOP_CENTER" layoutX="67.0" layoutY="-2.0" prefHeight="17.0" prefWidth="161.0">
+               <children>
+                  <Label fx:id="minoNowHp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="70.0" text="0" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="/">
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="minoMaxHp" prefHeight="17.0" prefWidth="70.0" text="0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane fx:id="dragonArea" layoutX="378.0" layoutY="15.0" prefHeight="375.0" prefWidth="360.0" visible="false">
+         <children>
+            <ImageView fx:id="mino1" fitHeight="344.0" fitWidth="494.0" layoutX="-83.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/dragon.png" />
+               </image>
+            </ImageView>
+            <ProgressBar fx:id="dragonHp" layoutX="91.0" layoutY="23.0" prefHeight="20.0" prefWidth="176.0" progress="1.0" />
+            <Label fx:id="dragonHeatBox" alignment="CENTER" layoutX="135.0" layoutY="-17.0" prefHeight="25.0" prefWidth="91.0" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <HBox alignment="TOP_CENTER" layoutX="100.0" layoutY="24.0" prefHeight="17.0" prefWidth="161.0">
+               <children>
+                  <Label fx:id="dragonNowHp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="70.0" text="0" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="/">
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="dragonMaxHp" prefHeight="17.0" prefWidth="70.0" text="0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <Label fx:id="dragonName" alignment="CENTER" layoutX="129.0" layoutY="340.0" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #fff; -fx-border-color: #000;" />
+         </children>
+      </Pane>
+      <ImageView fx:id="normalEffect" fitHeight="150.0" fitWidth="200.0" layoutX="433.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true" rotate="149.9" visible="false">
+         <image>
+            <Image url="@../../../../img/normalAttack.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="skill1Effect" fitHeight="266.0" fitWidth="266.0" layoutX="375.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../img/skill1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="skill2Effect" fitHeight="290.0" fitWidth="298.0" layoutX="332.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true" rotate="12.1" visible="false">
+         <image>
+            <Image url="@../../../../img/skill2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="skill3Effect" fitHeight="290.0" fitWidth="298.0" layoutX="415.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../img/skill3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="monsterEffect1" fitHeight="207.0" fitWidth="203.0" layoutX="153.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../img/monsterEffect1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="monsterEffect2" fitHeight="207.0" fitWidth="203.0" layoutX="153.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../img/monsterEffect2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="defenceEffect" fitHeight="465.0" fitWidth="608.0" layoutX="-80.0" layoutY="112.0" opacity="0.5" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../img/defence.png" />
+         </image>
+      </ImageView>
+      <ProgressBar fx:id="playerMpBar" layoutX="146.0" layoutY="181.0" prefHeight="20.0" prefWidth="176.0" progress="1.0" />
+      <ProgressBar fx:id="playerHpBar" layoutX="146.0" layoutY="156.0" prefHeight="20.0" prefWidth="176.0" progress="1.0" style="-fx-border-style: none;" />
+      <ProgressBar fx:id="playerexp" layoutY="450.0" prefHeight="20.0" prefWidth="800.0" progress="1.0" />
+      <Pane layoutY="465.0" prefHeight="135.0" prefWidth="800.0" style="-fx-background-color: #fff;" />
+      <HBox fx:id="btnlist" layoutY="464.0" prefHeight="135.0" prefWidth="800.0" style="-fx-background-color: #fff;" visible="false">
+         <children>
+            <Button fx:id="attackBtn" mnemonicParsing="false" onMouseClicked="#attackBtnList" text="공격">
+               <HBox.margin>
+                  <Insets right="145.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#defence" text="방어">
+               <HBox.margin>
+                  <Insets right="145.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="invenBtn" mnemonicParsing="false" onMouseClicked="#invenbtnList" text="인벤토리">
+               <HBox.margin>
+                  <Insets right="145.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="runBtn" mnemonicParsing="false" onMouseClicked="#exit" text="도망">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="30.0" left="100.0" right="100.0" top="30.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets left="80.0" right="80.0" top="50.0" />
+         </padding>
+      </HBox>
+      <AnchorPane fx:id="attacklist" layoutY="464.0" prefHeight="135.0" prefWidth="800.0" style="-fx-background-color: #fff;" visible="false">
+         <children>
+            <Button fx:id="backbtn" layoutX="6.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#backBtn" text="뒤로가기" />
+            <Button fx:id="attackBtn1" layoutX="69.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#nomalAttack" text="기본공격" />
+            <Button fx:id="defenceBtn1" layoutX="262.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#skill1" text="스킬1" />
+            <Button fx:id="invenBtn1" layoutX="458.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#skill2" text="스킬2" />
+            <Button fx:id="runBtn1" layoutX="655.0" layoutY="50.0" mnemonicParsing="false" onMouseClicked="#skill3" text="스킬3" />
+         </children>
+      </AnchorPane>
+      <ProgressBar fx:id="playerexp" layoutY="450.0" prefHeight="20.0" prefWidth="800.0" progress="1.0" />
+      <HBox alignment="TOP_CENTER" layoutX="153.0" layoutY="157.0" prefHeight="17.0" prefWidth="161.0">
+         <children>
+            <Label fx:id="playerHp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="70.0" text="0" textAlignment="RIGHT">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <Label text="/">
+               <HBox.margin>
+                  <Insets left="2.0" right="2.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="playerMaxHp" prefHeight="17.0" prefWidth="70.0" text="0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="153.0" layoutY="182.0" prefHeight="17.0" prefWidth="161.0">
+         <children>
+            <Label fx:id="playerMp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="70.0" style="-fx-stroke-width: 5;-fx-stroke: black;" text="0" textAlignment="RIGHT">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <Label text="/">
+               <HBox.margin>
+                  <Insets left="2.0" right="2.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="playerMaxMp" prefHeight="17.0" prefWidth="70.0" text="0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="294.0" layoutY="451.0" prefHeight="17.0" prefWidth="161.0">
+         <children>
+            <Label fx:id="playerExp" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="70.0" text="0" textAlignment="RIGHT">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <Label text="/">
+               <HBox.margin>
+                  <Insets left="2.0" right="2.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="playerMaxExp" prefHeight="17.0" prefWidth="70.0" text="0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <Label fx:id="playerName1" layoutX="151.0" layoutY="138.0" text="Lv" />
+      <Label fx:id="playerLevel" alignment="CENTER_RIGHT" layoutX="165.0" layoutY="138.0" prefHeight="17.0" prefWidth="15.0" />
+      <Label fx:id="playerName" alignment="CENTER_RIGHT" layoutX="195.0" layoutY="138.0" prefHeight="17.0" prefWidth="125.0" />
+      <AnchorPane fx:id="inventory" layoutX="130.0" layoutY="67.0" prefHeight="383.0" prefWidth="591.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <Button layoutX="25.0" layoutY="102.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="61.0" />
+            <ImageView fitHeight="61.0" fitWidth="105.0" layoutX="25.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/565656.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#42cd55" layoutY="-13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="인벤토리" wrappingWidth="94.0" />
+            <Button layoutX="563.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#exitinvenbtn" prefHeight="17.0" prefWidth="28.0" text="X" />
+            <Label layoutX="14.0" layoutY="339.0" prefHeight="34.0" prefWidth="40.0" text="돈">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Text layoutX="83.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="21.8125">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Separator layoutX="5.0" layoutY="329.0" prefHeight="10.0" prefWidth="599.0" />
+            <Separator layoutY="86.0" prefHeight="10.0" prefWidth="602.0" />
+            <Button layoutX="66.0" layoutY="42.0" mnemonicParsing="false" text="전체" />
+            <Button layoutX="185.0" layoutY="42.0" mnemonicParsing="false" text="장비" />
+            <Button layoutX="323.0" layoutY="42.0" mnemonicParsing="false" text="소모품" />
+            <Button layoutX="464.0" layoutY="42.0" mnemonicParsing="false" text="기타" />
+            <Separator layoutX="232.0" layoutY="92.0" orientation="VERTICAL" prefHeight="240.0" prefWidth="6.0" />
+            <Separator layoutX="4.0" layoutY="171.0" prefHeight="10.0" prefWidth="602.0" />
+            <Separator layoutY="249.0" prefHeight="10.0" prefWidth="608.0" />
+            <Button layoutX="25.0" layoutY="185.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="61.0" />
+            <ImageView fitHeight="61.0" fitWidth="105.0" layoutX="25.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/565656.jpg" />
+               </image>
+            </ImageView>
+            <Separator layoutX="121.0" layoutY="89.0" orientation="VERTICAL" prefHeight="247.0" prefWidth="6.0" />
+            <Separator layoutX="356.0" layoutY="92.0" orientation="VERTICAL" prefHeight="240.0" prefWidth="6.0" />
+            <Separator layoutX="484.0" layoutY="89.0" orientation="VERTICAL" prefHeight="247.0" prefWidth="6.0" />
+         </children>
+      </AnchorPane>
+      <Button layoutY="269.0" mnemonicParsing="false" onMouseClicked="#stabtnlist" prefHeight="45.0" prefWidth="94.0" text="캐릭터 능력치" />
+      <AnchorPane fx:id="statPaneview" layoutX="111.0" layoutY="49.0" prefHeight="401.0" prefWidth="634.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <Button layoutX="607.0" mnemonicParsing="false" onMouseClicked="#exitstatbtn" prefHeight="45.0" prefWidth="40.0" text="x" />
+            <HBox alignment="CENTER_LEFT" layoutX="45.0" layoutY="343.0" prefHeight="25.0" prefWidth="124.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 5;" text="소지 골드" />
+                  <Text fx:id="stPMoney" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 5;" text="0" textAlignment="CENTER" wrappingWidth="76.189453125">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="48.0" layoutY="265.0" prefHeight="25.0" prefWidth="124.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 10;" text="LV">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="stPLovel" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 25;" text="0" textAlignment="CENTER" wrappingWidth="61.189453125">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="223.0" layoutY="130.0" prefHeight="25.0" prefWidth="217.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 0;" text="공격력" wrappingWidth="63.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="stPPower" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 20;" text="0" textAlignment="CENTER" wrappingWidth="102.189453125">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="223.0" layoutY="160.0" prefHeight="25.0" prefWidth="217.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 0;" text="방어력" wrappingWidth="63.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="stPDef" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 20;" text="0" textAlignment="CENTER" wrappingWidth="102.189453125">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="223.0" layoutY="190.0" prefHeight="25.0" prefWidth="217.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 0;" text="스킬데미지" wrappingWidth="80.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="stPSkillPower" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 0;" text="0" textAlignment="CENTER" wrappingWidth="108.189453125">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="223.0" layoutY="220.0" prefHeight="25.0" prefWidth="217.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 0;" text="회피" wrappingWidth="63.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="stPEva" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 20;" text="0" textAlignment="CENTER" wrappingWidth="102.189453125">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="223.0" layoutY="250.0" prefHeight="25.0" prefWidth="217.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 0;" text="속도" wrappingWidth="63.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="stPSpd" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-translate-x: 20;" text="0" textAlignment="CENTER" wrappingWidth="102.189453125">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <Label layoutX="287.0" layoutY="9.0" text="Status" textFill="#00ccff">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Label>
+            <Text fx:id="stPName" layoutX="62.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="회원 아이디 정보" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Text>
+            <Text fx:id="stPName1" fill="#30ab00" layoutX="93.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="초보모험가" textAlignment="CENTER" />
+            <Text fx:id="stPName2" layoutX="61.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="직업" />
+            <Button layoutX="566.0" layoutY="101.0" mnemonicParsing="false" onMouseClicked="#str" prefHeight="25.0" prefWidth="28.0" text="▲" />
+            <Button layoutX="566.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#dex" prefHeight="25.0" prefWidth="28.0" text="▲" />
+            <Button layoutX="566.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#wis" prefHeight="25.0" prefWidth="28.0" text="▲" />
+            <Text fx:id="strtest" layoutX="531.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="15.189453125" />
+            <Text fx:id="dextest" layoutX="531.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="15.189453125" />
+            <Text fx:id="wistest" layoutX="531.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="15.189453125" />
+            <ImageView fitHeight="200.0" fitWidth="146.0" layoutX="38.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/character.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="79.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="스킬 1" wrappingWidth="61.0" />
+            <Text layoutX="276.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="스킬2" wrappingWidth="61.0" />
+            <Text layoutX="479.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="스킬 3" wrappingWidth="61.0" />
+            <Text layoutX="494.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="힘" wrappingWidth="15.189453125" />
+            <Text layoutX="492.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="민첩" wrappingWidth="35.0" />
+            <Text layoutX="492.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="지능" wrappingWidth="35.0" />
+            <Text layoutX="489.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="남은 스킬 포인트" wrappingWidth="114.189453125" />
+            <Text fx:id="stPoint" layoutX="595.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="15.189453125" />
+            <HBox alignment="TOP_CENTER" layoutX="276.0" layoutY="77.0" prefHeight="17.0" prefWidth="161.0">
+               <children>
+                  <Label fx:id="playerMp1" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="70.0" style="-fx-stroke-width: 5;-fx-stroke: black;" text="0" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="/">
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="playerMaxMp1" prefHeight="17.0" prefWidth="70.0" text="0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" layoutX="276.0" layoutY="46.0" prefHeight="17.0" prefWidth="161.0">
+               <children>
+                  <Label fx:id="playerHp1" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="70.0" text="0" textAlignment="RIGHT">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="/">
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="playerMaxHp1" prefHeight="17.0" prefWidth="70.0" text="0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <Text fill="RED" layoutX="206.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP" textAlignment="CENTER" wrappingWidth="70.0" />
+            <Text fill="#1500ff" layoutX="206.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MP" textAlignment="CENTER" wrappingWidth="70.0" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="playerHeatBox" alignment="CENTER" layoutX="188.0" layoutY="101.0" prefHeight="25.0" prefWidth="91.0" text="0" textAlignment="CENTER" textFill="#ff5be6" visible="false">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="exitalert" layoutX="234.0" layoutY="129.0" prefHeight="200.0" prefWidth="311.0" style="-fx-background-color: #5F4C0B;" visible="false">
+         <children>
+            <Button fx:id="villageBtn" layoutX="61.0" layoutY="156.0" mnemonicParsing="false" onMouseClicked="#villageBtn" text="예" />
+            <Button layoutX="196.0" layoutY="156.0" mnemonicParsing="false" onMouseClicked="#exitBack" text="아니오" />
+            <TextArea layoutX="13.0" layoutY="30.0" prefHeight="112.0" prefWidth="283.0" style="-fx-background-color: #fff; -fx-border-style: none;" text="정말로 도망가시겠습니까?&#10;&#10;도망가면 경험치와 돈은 획득 하지 못하고&#10;&#10;상태는 그대로 저장됩니다." />
+         </children>
+      </AnchorPane>
+      <Pane fx:id="win" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.8" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;" visible="false" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+         <children>
+            <Label layoutX="309.0" layoutY="181.0" nodeOrientation="LEFT_TO_RIGHT" text="승리!" textFill="#0400ff">
+               <font>
+                  <Font name="System Bold" size="80.0" />
+               </font>
+            </Label>
+            <Button layoutX="334.0" layoutY="345.0" mnemonicParsing="false" onMouseClicked="#villageBtn" text="마을로 이동">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="lose" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.8" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;" visible="false" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+         <children>
+            <Label layoutX="309.0" layoutY="181.0" nodeOrientation="LEFT_TO_RIGHT" text="패배!" textFill="#fc0a0a">
+               <font>
+                  <Font name="System Bold" size="80.0" />
+               </font>
+            </Label>
+            <Button layoutX="334.0" layoutY="345.0" mnemonicParsing="false" onMouseClicked="#villageBtn" text="마을로 이동">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
